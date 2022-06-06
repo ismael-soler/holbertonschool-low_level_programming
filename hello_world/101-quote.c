@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
- * main - displays test with the stderr
+ * main - Entry point
  *
  * Return: Always 0 (Success)
  *
