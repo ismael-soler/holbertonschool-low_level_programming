@@ -9,10 +9,12 @@
 void jack_bauer(void)
 {
 	char hd, hu, md, mu;
+	int max_hu = '9';
+	int counter = '0';
 
 	for (hd = '0'; hd <= '2'; hd++)
 	{
-		for (hu = '0'; hu <= '3'; hu++)
+		for (hu = '0'; hu <= max_hu; hu++)
 		{
 			for (md = '0'; md <= '5'; md++)
 			{
@@ -26,6 +28,11 @@ void jack_bauer(void)
 					_putchar('\n');
 				}
 			}
+		}
+		counter++;
+		if (counter == '2')
+		{
+		max_hu = '3';
 		}
 	}
 }
