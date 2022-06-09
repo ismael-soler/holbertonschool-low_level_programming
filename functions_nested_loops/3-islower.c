@@ -2,7 +2,7 @@
 
 /**
  *  _islower - does some stuff idk im tired
- *
+ * c - juju
  * Return: 1 if lowercase, 0 otherwise
  */
 
