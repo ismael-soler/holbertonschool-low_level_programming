@@ -8,8 +8,15 @@
 void print_alphabet_x10(void)
 {
 	char contador;
+	int letra;
 	for (contador = '0'; contador <= '9'; contador++)
+
 	{
-		print_alphabet();
+
+		for (letra = 'a'; letra <= 'z'; letra++)
+		{
+			_putchar(letra);
+		}
+		_putchar('\n');
 	}
 }
