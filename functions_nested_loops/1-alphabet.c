@@ -1,12 +1,13 @@
 #include "main.h"
 
 /**
- * main - using only _putchar followed by a new line
+ * print_alphabet - using only _putchar followed by a new line
+ *
  *
  * Return: 0
  */
 
-int main(void)
+void print_alphabet(void)
 {
 	int letra;
 
@@ -15,7 +16,6 @@ int main(void)
 		_putchar(letra);
 	}
 	_putchar('\n');
-	return (0);
 }
 
 
