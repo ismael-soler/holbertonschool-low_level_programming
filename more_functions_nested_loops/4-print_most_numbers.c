@@ -11,13 +11,13 @@ void print_most_numbers(void)
 
 	for (i = '0'; i <= '9'; i++)
 	{
-		if (i != '2' || i != '4')
+		if (i == '2' || i == '4')
 		{
-		_putchar(i);
+		continue;
 		}
 		else
 		{
-		continue;
+		_putchar(i);
 		}
 	}
 _putchar('\n');
