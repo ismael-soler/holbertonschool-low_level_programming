@@ -2,7 +2,7 @@
 
 /**
  * _isupper - returns 1 if c is upper case
- * @c: character 
+ * @c: character
  * Return: 0 otherwise
  */
 
@@ -12,7 +12,7 @@ int _isupper(int c)
 	{
 		return (0);
 	}
-	else 
+	else
 	{
 		return (1);
 	}
