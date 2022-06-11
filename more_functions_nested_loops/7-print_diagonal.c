@@ -7,16 +7,21 @@
 
 void print_diagonal(int n)
 {
+	int i;
+	int tope;
+
 	if (n >= 0)
 	{
+		tope = 1;
 		while (n--)
 		{
-			for (int i; i <= n; i++)
+			_putchar(92);
+			_putchar('\n');
+			for (i = 0; i <= tope; i++)
 			{
 				_putchar(' ');
-				_putchar('\\\');
-				-putchar('n');
 			}
+			tope++;
 		}
 	}
 }
