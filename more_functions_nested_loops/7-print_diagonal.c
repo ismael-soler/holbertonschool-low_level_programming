@@ -10,7 +10,7 @@ void print_diagonal(int n)
 	int i;
 	int tope;
 
-	if (n >= 0)
+	if (n > 0)
 	{
 		tope = 0;
 		while (n--)
