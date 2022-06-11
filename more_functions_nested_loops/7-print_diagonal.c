@@ -14,7 +14,7 @@ void print_diagonal(int n)
 	{
 		tope = 0;
 		while (n--)
-		{	
+		{
 			if (tope > 0)
 			{
 				for (i = 0; i < tope; i++)
