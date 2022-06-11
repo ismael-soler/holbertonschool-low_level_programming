@@ -27,5 +27,6 @@ void more_numbers(void)
 		max_b = '4';
 	}
 	_putchar('\n');
+	max_b = '9';
 	}
 }
