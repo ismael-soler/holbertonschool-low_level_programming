@@ -12,16 +12,20 @@ void print_diagonal(int n)
 
 	if (n >= 0)
 	{
-		tope = 1;
+		tope = 0;
 		while (n--)
-		{
+		{	
+			if (tope > 0)
+			{
+				for (i = 0; i < tope; i++)
+				{
+					_putchar(' ');
+				}
+			}
 			_putchar(92);
 			_putchar('\n');
-			for (i = 0; i <= tope; i++)
-			{
-				_putchar(' ');
-			}
 			tope++;
 		}
+		_putchar('\n');
 	}
 }
