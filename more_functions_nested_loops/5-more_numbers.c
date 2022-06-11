@@ -9,8 +9,11 @@ void more_numbers(void)
 {
 	int a, b;
 	int max_b;
+	int i;
 
 	max_b = '9';
+	for (i = '0'; i <= '9' ; i++)
+	{
 	for (a = '0'; a <= '1'; a++)
 	{
 		for (b = '0'; b <= max_b; b++)
@@ -24,4 +27,5 @@ void more_numbers(void)
 		max_b = '4';
 	}
 	_putchar('\n');
+	}
 }
