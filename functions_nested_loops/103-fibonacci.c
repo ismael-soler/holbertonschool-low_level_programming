@@ -10,8 +10,8 @@ int main(void)
 	long pre2; /* last printed number */
 	long print, old_print; /* number to print / printed number placeholder */
 	long sum; /* total sum */
-	
-	sum = 0;	
+
+	sum = 0;
 	pre2 = 1;
 	print = 1;
 	while (print < 4000000)
