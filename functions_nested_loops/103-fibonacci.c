@@ -11,11 +11,15 @@ int main(void)
 	long print, old_print; /* number to print / printed number placeholder */
 	long sum; /* total sum */
 	
+	sum = 0;	
 	pre2 = 1;
 	print = 1;
 	while (print < 4000000)
 	{
-		sum = sum + print;
+		if (print % 2 == 0)
+		{
+			sum = sum + print;
+		}
 		old_print = print;
 		print = print + pre2;
 		pre2 = old_print;
