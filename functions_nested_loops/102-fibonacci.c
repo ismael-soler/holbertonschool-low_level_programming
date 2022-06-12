@@ -24,14 +24,10 @@ int main(void)
 		if (check == 1 || check == 2)
 		{
 			printf("%d, ", print);
-			old_print = print;
-			print = print + pre2;
-			pre2 = old_print;
 		}
-		else
-		{
-			continue;
-		}
+		old_print = print;
+		print = print + pre2;
+		pre2 = old_print;
 	}
 return (0);
 }
