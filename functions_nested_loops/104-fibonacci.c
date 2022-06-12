@@ -8,7 +8,7 @@
 int main(void)
 {
 	unsigned long pre2; /* last printed number */
-	unsigned long print, old_print; /* number to print / printed number placeholder */
+	unsigned long print, old_print;
 	int i; /* iteratiorns */
 
 	pre2 = 1;
