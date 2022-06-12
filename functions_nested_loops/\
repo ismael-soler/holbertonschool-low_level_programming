@@ -23,7 +23,7 @@ int main(void)
 	}
 	else
 	{
-		printf("%ld\n", print);
+		printf("%ld", print);
 		old_print = print;
 		print = print + pre2;
 		pre2 = old_print;
