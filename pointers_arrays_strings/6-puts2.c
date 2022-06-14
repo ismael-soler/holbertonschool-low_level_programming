@@ -10,10 +10,6 @@ void puts2(char *str)
 	int i;
 
 	for (i = 0; s[i]; i++)
-	{
-		if (i % 2 == 0)
-		{
+		if (!(i % 2))
 			_putchar(str[i]);
-		}
-	}
 }
