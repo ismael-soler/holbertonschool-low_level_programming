@@ -13,11 +13,11 @@ char *_strncpy(char *dest, char *src, int n)
 	int i;
 
 	for (i = 0; src[i]; i++)
-		src[i];
-	if (i < n)
+		; /* calculo distancia */
+	if (i < n) /* si el contenido es mas chico que n */
 		n = i;
 	if (n > 0)
-		for (i = 0; i < n; i++)
+		for (i = 0; i < n; i++) /* copiacion */
 			dest[i] = src[i];
 	return (dest);
 }
