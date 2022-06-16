@@ -12,7 +12,7 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
 
-	if (dest[0] = '\0' || src[0] = '\0')
+	if (dest[0] == '\0' || src[0] == '\0')
 		return (dest);
 	else if (n > 0)
 	{
