@@ -10,8 +10,7 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
 
-	if (n = 0)
+	if (n == 0)
 		return (dest);
 }
