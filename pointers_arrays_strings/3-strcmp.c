@@ -16,9 +16,6 @@ int _strcmp(char *s1, char *s2)
 	for (i = 0, j = 0; s1[i] || s2[j]; i++, j++)
 	{
 		if (i > j)
-			counter++;
-		else
-			counter--;
-	}
+			counter += (i - j);
 	return (counter);
 }
