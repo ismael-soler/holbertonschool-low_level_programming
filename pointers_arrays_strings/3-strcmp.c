@@ -13,8 +13,10 @@ int _strcmp(char *s1, char *s2)
 	int counter;
 
 	for (i = 0; s1[i] || s2[i] || counter != 0; i++)
+	{
 		a = s1[i];
 		b = s2[i];
 		counter = (a - b);
+	}
 	return (counter);
 }
