@@ -9,7 +9,7 @@
 char *leet(char *str)
 {
 	char lett[] = "aAeEoOtTlL";
-	char num[] = "4433770011";
+	char num[] = "4433007711";
 	int i, j;
 
 	for (i = 0; str[i]; i++)
