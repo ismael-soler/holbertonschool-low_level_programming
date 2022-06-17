@@ -1,4 +1,5 @@
 void reset_to_98(int *n);
+char *cap_string(char *);
 void reverse_array(int *a, int n);
 int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
