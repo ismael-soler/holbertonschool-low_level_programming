@@ -1,22 +1,24 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * _strcmp - compares two strings
- * @s1: string n1
- * @s2: string n2
- * Return: counter
+ * _strcmp - appends the string in src to the one in dest
+ * @s1: string 1
+ * @s2: string 2
+ * Return: dif
  */
 
 int _strcmp(char *s1, char *s2)
 {
-	int i, a, b;
-	int counter;
+	int dif;
+	int i;
 
-	for (i = 0; s1[i] || s2[i] || counter != 0; i++)
+	i = 0;
+	dif = 0;
+	for (; s1[i] || s2[i]; i++)
 	{
-		a = s1[i];
-		b = s2[i];
-		counter = (a - b);
+		dif = (s1[i] - s2[i]);
+		if (dif != 0)
+			continue;
 	}
-	return (counter);
+	return (dif);
 }
