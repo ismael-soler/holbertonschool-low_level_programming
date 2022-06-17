@@ -9,11 +9,12 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i;
+	int i, a, b;
 	int counter;
 
-	counter = 0;
 	for (i = 0; s1[i] || s2[i] || counter != 0; i++)
-		counter = (s1[i] - s2[i]);
+		a = s1[i]
+		b = s2[i]
+		counter = (a - b);
 	return (counter);
 }
