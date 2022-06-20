@@ -15,7 +15,7 @@ int _sqrt_recursion(int n)
  * extra - extra function to solve the previous
  * @num: number
  * @guess: guess
- * Return: -1 in error 
+ * Return: -1 in error
  */
 
 int extra(int num, int guess)
