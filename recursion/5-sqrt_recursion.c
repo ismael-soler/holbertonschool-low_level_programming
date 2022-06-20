@@ -19,11 +19,12 @@ int _sqrt_recursion(int n)
 
 int extra(int num, int guess)
 {
-	guess = 1;
+	int square;
 
-	if (guess * guess == num)
+	square = guess * guess;
+	if (square == num)
 		return (guess);
-	else if (guess * guess < num)
+	else if (square < num)
 		return (extra(num, (guess + 1)));
 	else
 		return (-1);
