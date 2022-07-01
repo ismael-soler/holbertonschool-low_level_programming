@@ -6,7 +6,7 @@
  * Return: total sum
  */
 
-int sum_them _all(cost unsigned int n, ...)
+int sum_them_all(cost unsigned int n, ...)
 {
 	va_list args;
 	int i, sum;
