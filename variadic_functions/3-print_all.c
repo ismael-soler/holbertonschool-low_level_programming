@@ -82,5 +82,7 @@ void printfloat(float a)
 
 void printstring(char *a)
 {
+	if (a == NULL)
+		a = "(nil)";
 	printf("%s", a);
 }
