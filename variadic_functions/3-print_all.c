@@ -8,33 +8,73 @@
 void print_all(const char * const format, ...)
 {
 	int i;
-	char format_char;
+	va_list arg;
 
+	va_start(arg, format);
 	i = 0;
 	while (format[i])
 	{
-		format_char = format[i];
-		get_func(format_char);
+		switch (format[i])
+		{
+			case 'c':
+				printchar(va_arg(arg, int));
+				break;
+			case 'i':
+				printint(va_arg(arg, int));
+				break;
+			case 'f':
+				printfloat(va_arg(arg, double));
+				break;
+			case 's':
+				printstring(va_arg(arg, char *));
+				break;
+			default:
+				break;
+		}
+		if (format[i + 1] != '\0')
+			printf(", ");
 		i++;
 	}
-
+	printf("\n");
+	va_end(arg);
 }
 
 /**
- * get_func - finds tihe correct function to printthe text
- * @format_char: format character identifier
+ * printchar - prints a char
+ * @a: to print
  */
 
-void get_func(int format_char)
+void printchar(char a)
 {
-	char ar[] = {'c', 'i', 'f', 's'};
-	int i;
+	printf("%c", a);
+}
 
-	i = 0;
-	while (ar[i])
-	{
-		if (format_char == ar[i])
-			printf("%c\n", ar[i]);
-		i++;
-	}
+/**
+ * printint - prints a char
+ * @a: to print
+ */
+
+void printint(int a)
+{
+	printf("%d", a);
+}
+
+/**
+ * printfloat - prints a char
+ * @a: to print
+ */
+
+void printfloat(float a)
+{
+	printf("%f", a);
+}
+
+/**
+ * printstring - prints a char
+ * @a: to print
+ */
+
+void printstring(char *a)
+{
+	printf("%s", a);
 }
