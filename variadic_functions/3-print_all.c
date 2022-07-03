@@ -7,8 +7,9 @@
 
 void print_all(const char * const format, ...)
 {
-	int i;
+	int i, j;
 	va_list arg;
+	char ar[] = {'c', 'i', 'f', 's'};
 
 	va_start(arg, format);
 	i = 0;
@@ -31,8 +32,13 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		if (format[i + 1] != '\0')
-			printf(", ");
+		j = 0;
+		while (ar[j])
+		{
+			if (format[i + 1] != '\0' && format[i] == ar[j])
+				printf(", ");
+			j++;
+		}
 		i++;
 	}
 	printf("\n");
