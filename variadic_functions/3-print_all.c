@@ -30,9 +30,11 @@ void get_func(int format_char)
 	char ar[] = {'c', 'i', 'f', 's'};
 	int i;
 
-	for (i = 0; ar[i]; i++)
+	i = 0;
+	while (ar[i])
 	{
 		if (format_char == ar[i])
 			printf("%c\n", ar[i]);
+		i++;
 	}
 }
