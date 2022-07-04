@@ -18,5 +18,5 @@ fclean:
 	$(RM) $(OBJ)
 	$(RM) *.swp
 
-
+re: oclean all 
 
