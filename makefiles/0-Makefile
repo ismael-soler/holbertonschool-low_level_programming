@@ -1,5 +1,8 @@
 CFLAGS = -Wall -pedantic -Werror -Wextra -std=gnu89
 
+all: school
+
+
 school: main.o school.o
 	gcc $(CFLAGS) -o school main.o school.o
 
