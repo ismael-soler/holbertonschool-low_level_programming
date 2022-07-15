@@ -21,9 +21,19 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (new_node == NULL)
 		return (NULL);
 
-	for (i = 0; i < idx - 1 && aux2; i++)
+	if (idx == 0)
 	{
-		aux2 = (aux2)->next;
+		new_node->next = *head;
+		new_node->n = n;
+		*head = new_node;
+		return (new_node);
+	}
+	if (idx != 0)
+	{
+		for (i = 0; i < idx - 1 && aux2; i++)
+		{
+			aux2 = (aux2)->next;
+		}
 	}
 
 	aux1 = aux2;
