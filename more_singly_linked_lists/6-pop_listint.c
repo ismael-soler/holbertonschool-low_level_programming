@@ -11,6 +11,9 @@ int pop_listint(listint_t **head)
 	listint_t *aux;
 	int n;
 
+	if (*head == NULL)
+		return (0);
+
 	if (head)
 	{
 		aux = *head;
