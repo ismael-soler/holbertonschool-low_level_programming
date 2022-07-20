@@ -35,11 +35,16 @@ int copy(const char *file_from, const char *file_to)
 
 	source_fd = open(file_from, O_RDONLY, 0600);
 	if (source_fd == -1)
-		printf("Error: Can't read from file %s\n", file_from), return (98);
+	{
+		printf("Error: Can't read from file %s\n", file_from);
+		return (98);
+	}
 	dest_fd = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (dest_fd == -1)
-		printf("Error: Can't write to %s\n", file_to), return (99);
-
+	{
+		printf("Error: Can't write to %s\n", file_to);
+		return (99);
+	}
 	buffer = malloc(sizeof(char) * strlen(file_from));
 	if (buffer == NULL)
 		return (-1);
@@ -47,7 +52,7 @@ int copy(const char *file_from, const char *file_to)
 	close_ret = close(source_fd);
 	if (close_ret != 0)
 	{
-		printf("Error: Can't close fd %i\n", source_fd)
+		printf("Error: Can't close fd %i\n", source_fd);
 		return (100);
 	}
 	close_ret = close(dest_fd);
@@ -56,5 +61,6 @@ int copy(const char *file_from, const char *file_to)
 		printf("Error: Can't close fd %i\n", dest_fd);
 		return (100);
 	}
+	return (0);
 }
 
