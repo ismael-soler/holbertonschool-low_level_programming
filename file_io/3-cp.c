@@ -33,6 +33,7 @@ int copy(const char *file_from, const char *file_to)
 	int source_fd, dest_fd, close_ret, r_out, w_out;
 	char *buffer;
 
+	(void) w_out;
 	source_fd = open(file_from, O_RDONLY);
 	if (source_fd == -1)
 	{
@@ -58,8 +59,7 @@ int copy(const char *file_from, const char *file_to)
 			dprintf(STDERR_FILENO, "Error Can't read from file %s\n", file_from);
 			return (98);
 		}
-		w_out = write(dest_fd, buffer, r_out);
-		if (w_out == -1)
+		if (write(dest_fd, buffer, r_out) == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			return (99);
@@ -69,14 +69,12 @@ int copy(const char *file_from, const char *file_to)
 	close_ret = close(source_fd);
 	if (close_ret != 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", source_fd);
-		return (100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", source_fd), exit(100);
 	}
 	close_ret = close(dest_fd);
 	if (close_ret)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", dest_fd);
-		return (100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", dest_fd), exit(100);
 	}
 	return (0);
 }
