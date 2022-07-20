@@ -49,10 +49,23 @@ int copy(const char *file_from, const char *file_to)
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 		return (-1);
+	r_out = 1024;
+	for (; r_out == 1024;)
+	{
+		r_out = read(source_fd, buffer, 1024);
+		if (r_out == -1)
+		{
+			printf("Error Can't read from file %s\n", file_from);
+			return (98);
+		}
+		w_out = write(dest_fd, buffer, r_out);
+		if (w_out == -1)
+		{
+			printf("Error: Can't write to %s\n", file_to);
+			return (99);
+		}
+	}
 
-	r_out = read(source_fd, buffer, 1024);
-	w_out = write(dest_fd, buffer, r_out);
-	printf("%i\n", w_out);
 	close_ret = close(source_fd);
 	if (close_ret != 0)
 	{
@@ -67,4 +80,3 @@ int copy(const char *file_from, const char *file_to)
 	}
 	return (0);
 }
-
