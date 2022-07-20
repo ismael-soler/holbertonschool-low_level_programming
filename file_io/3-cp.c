@@ -13,7 +13,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -36,14 +36,14 @@ int copy(const char *file_from, const char *file_to)
 	source_fd = open(file_from, O_RDONLY);
 	if (source_fd == -1)
 	{
-		printf("Error: Can't read from file %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		return (98);
 	}
 	dest_fd = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR
 		| S_IRGRP | S_IWGRP | S_IROTH);
 	if (dest_fd == -1)
 	{
-		printf("Error: Can't write to %s\n", file_to);
+		printf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		return (99);
 	}
 	buffer = malloc(sizeof(char) * 1024);
@@ -69,13 +69,13 @@ int copy(const char *file_from, const char *file_to)
 	close_ret = close(source_fd);
 	if (close_ret != 0)
 	{
-		printf("Error: Can't close fd %i\n", source_fd);
+		printf(STDERR_FILENO, "Error: Can't close fd %i\n", source_fd);
 		return (100);
 	}
 	close_ret = close(dest_fd);
 	if (close_ret)
 	{
-		printf("Error: Can't close fd %i\n", dest_fd);
+		printf(STDERR_FILENO, "Error: Can't close fd %i\n", dest_fd);
 		return (100);
 	}
 	return (0);
