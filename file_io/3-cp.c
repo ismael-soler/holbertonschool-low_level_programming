@@ -43,7 +43,7 @@ int copy(const char *file_from, const char *file_to)
 		| S_IRGRP | S_IWGRP | S_IROTH);
 	if (dest_fd == -1)
 	{
-		printf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		return (99);
 	}
 	buffer = malloc(sizeof(char) * 1024);
@@ -55,13 +55,13 @@ int copy(const char *file_from, const char *file_to)
 		r_out = read(source_fd, buffer, 1024);
 		if (r_out == -1)
 		{
-			printf("Error Can't read from file %s\n", file_from);
+			dprintf(STDERR_FILENO, "Error Can't read from file %s\n", file_from);
 			return (98);
 		}
 		w_out = write(dest_fd, buffer, r_out);
 		if (w_out == -1)
 		{
-			printf("Error: Can't write to %s\n", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			return (99);
 		}
 	}
@@ -69,13 +69,13 @@ int copy(const char *file_from, const char *file_to)
 	close_ret = close(source_fd);
 	if (close_ret != 0)
 	{
-		printf(STDERR_FILENO, "Error: Can't close fd %i\n", source_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", source_fd);
 		return (100);
 	}
 	close_ret = close(dest_fd);
 	if (close_ret)
 	{
-		printf(STDERR_FILENO, "Error: Can't close fd %i\n", dest_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", dest_fd);
 		return (100);
 	}
 	return (0);
