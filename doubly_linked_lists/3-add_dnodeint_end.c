@@ -4,11 +4,12 @@
  * add_dnodeint_end - add node int at the end
  * @head: pointer to the head
  * @n: number to include
+ * Return: the address of the new element
  */
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *new_node = NULL;
+	dlistint_t *new_node = NULL, *aux = *head;
 
 	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
@@ -17,13 +18,15 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	new_node->next = NULL;
 	if (*head)
 	{
-		for (; (*head)->next; *head = (*head)->next)
+		for (; aux->next; aux = aux->next)
 			;
-		(*head)->next = new_node;
-		new_node->prev = *head;
+		aux->next = new_node;
+		new_node->prev = aux;
 	}
 	else
-		new_node->next = NULL;
-	*head = new_node;
+	{
+		new_node->prev = NULL;
+		*head = new_node;
+	}
 	return (new_node);
 }
