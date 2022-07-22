@@ -22,7 +22,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		aux2 = aux1->next;
 		free(aux1);
 		if (aux2)
-			aux2->prev = NULL
+			aux2->prev = NULL;
 		return (1);
 	}
 
@@ -43,7 +43,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	aux0 = aux1->prev;
 	aux0->next = aux2;
 	if (aux2)
-		aux->prev = aux1;
+		aux2->prev = aux1;
 	free(aux1);
 	return (1);
 }
