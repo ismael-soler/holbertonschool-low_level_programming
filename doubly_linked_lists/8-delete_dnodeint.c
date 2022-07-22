@@ -35,6 +35,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	aux1->next = aux0;
 	if (aux0)
 		aux0->prev = aux1;
-	free(aux1);
+	free(aux2);
 	return (1);
 }
