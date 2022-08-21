@@ -27,17 +27,22 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			ht->array[index] = malloc(sizeof(hash_node_t));
 			if (ht == NULL)
-				return (0);	
+				return (0);
 
 			ht->array[index]->key = strdup(key);
 			ht->array[index]->value = strdup(value);
-			ht->array[index]->next = ht->array[index + 1];
+			ht->array[index]->next = NULL;
 			return (1);
 		}
 		else if (ht->array[index]) /*if the node alredy exists*/
 		{
 			if (strcmp(ht->array[index]->key, key) == 0) /*check if the key matches*/
+			{
+				free(ht->array[index]->value);
 				ht->array[index]->value = strdup(value);
+			}
+				ht->array[index] = ht->array[index]->next;
+
 			return (1);
 		}
 	}
