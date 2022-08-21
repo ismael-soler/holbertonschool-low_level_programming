@@ -20,7 +20,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	current_node = ht->array[index];
 
 	if (current_node)
-		return (current_node->value);
-	else
-		return (NULL);
+	{
+		for(; current_node; current_node = current_node->next)
+		{
+		if (strcmp(current_node->key, key) == 0)
+			return (current_node->value);
+		}
+	}
+
+	return (NULL);
 }
