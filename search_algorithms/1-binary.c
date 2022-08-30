@@ -28,14 +28,14 @@ int binary_search(int *array, size_t size, int value)
 		else if (value < array[i])
 		{
 			max = i - 1;
-			i = (max) / 2;
+			i = ((max + min) / 2);
 		}
 		else if (value > array[i])
 		{
 			min = i + 1;
 			i = ((max + min) / 2);
 		}
-		if (min > max)
+		if (min > max || max < min)
 			break;
 	}
 	return (-1);
