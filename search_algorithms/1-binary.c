@@ -7,6 +7,7 @@
  * @array: array
  * @size: size of @array
  * @value: value to find
+ * Return: index to the first occurence
  */
 
 int binary_search(int *array, size_t size, int value)
@@ -33,16 +34,23 @@ int binary_search(int *array, size_t size, int value)
 		{
 			min = i + 1;
 			i = ((max + min) / 2);
-			if (min > max)
-				break;
 		}
+		if (min > max)
+			break;
 	}
 	return (-1);
 }
 
+/**
+ * print_digits - prints digits
+ *
+ * @array: array
+ * @min: min
+ * @max: max
+ */
 void print_digits(int *array, int min, int max)
 {
-	printf("Searching in array: ");
+	printf ("Searching in array: ");
 	for(; min <= max; min++)
 	{
 		printf("%i", array[min]);
