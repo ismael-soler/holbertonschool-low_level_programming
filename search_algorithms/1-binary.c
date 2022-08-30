@@ -50,8 +50,8 @@ int binary_search(int *array, size_t size, int value)
  */
 void print_digits(int *array, int min, int max)
 {
-	printf ("Searching in array: ");
-	for(; min <= max; min++)
+	printf("Searching in array: ");
+	for (; min <= max; min++)
 	{
 		printf("%i", array[min]);
 		if (min <= max - 1)
