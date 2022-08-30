@@ -19,8 +19,6 @@ int binary_search(int *array, size_t size, int value)
 	i = max / 2;
 	while (1)
 	{
-		printf("%li", i);
-		printf("%i", array[i]);
 		print_digits(array, min, max);
 		if (array[i] == value)
 		{
